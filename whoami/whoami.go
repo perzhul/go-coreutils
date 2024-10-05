@@ -5,12 +5,15 @@ import (
 	"os/user"
 )
 
-func whoami() {
+func main() {
+	fmt.Println(Whoami())
+}
+
+func Whoami() string {
 	user, err := user.Current()
 	if err != nil {
 		fmt.Errorf("error retrieving current user")
 	}
 
-	fmt.Println(user.Username)
-
+	return user.Username
 }

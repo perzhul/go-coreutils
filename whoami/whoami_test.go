@@ -1,6 +1,7 @@
 package whoami
 
 import (
+	"fmt"
 	"io"
 	"os"
 	"testing"
@@ -15,7 +16,7 @@ func TestWhoami(t *testing.T) {
 
 	os.Stdout = w
 
-	whoami()
+	fmt.Println(Whoami())
 
 	w.Close()
 	os.Stdout = old
